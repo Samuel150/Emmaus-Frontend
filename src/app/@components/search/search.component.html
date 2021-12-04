@@ -1,0 +1,10 @@
+<mat-form-field class="example-form-field" appearance="outline" >
+    <mat-label>{{label}}</mat-label>
+    <input (keyup.enter)="emitFind(find)" [placeholder]="placeholder" matInput type="text" [(ngModel)]="find">
+    <button *ngIf="find" matSuffix mat-icon-button aria-label="Clear" >
+      <div class="u-flex">
+        <mat-icon (click)="find='';emitFind('')">close</mat-icon>
+        <mat-icon (click)="emitFind(find)">search</mat-icon>
+      </div>
+    </button>
+  </mat-form-field>
